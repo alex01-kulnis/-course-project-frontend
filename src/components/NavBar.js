@@ -1,7 +1,7 @@
-/* eslint-disable react/jsx-no-undef */
 import React, { useContext } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-import { Nav } from 'react-bootstrap';
+// import { Nav } from 'react-bootstrap/Nav';
+import Nav from 'react-bootstrap/Nav';
 import { Button } from 'react-bootstrap';
 import { Context } from '../index';
 import { NavLink } from 'react-bootstrap';
@@ -15,18 +15,31 @@ const NavBar = observer(() => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <NavLink style={{ color: 'white' }} to={EVENT_ROUTE}>
-          Event
-        </NavLink>
-        <NavLink style={{ color: 'white' }} to={EVENT_ROUTE}>
-          Активыне заявки
-        </NavLink>
-        <NavLink style={{ color: 'white' }} to={EVENT_ROUTE}>
-          История посещения
-        </NavLink>
-        <Nav className="ml-auto" style={{ color: 'white' }}>
-          <Button variant={'outline-light'}>авторизация</Button>
-        </Nav>
+        {user.isAuth ? (
+          <Nav className="ml-auto">
+            <Button variant={'outline-light'} style={{ margin: ' 0px 24px 0px 0px ' }}>
+              Event
+            </Button>
+            <Button variant={'outline-light'} style={{ margin: ' 0px 24px 0px 0px ' }}>
+              Создать event
+            </Button>
+            <Button variant={'outline-light'} style={{ margin: ' 0px 24px 0px 0px ' }}>
+              Активные заявки
+            </Button>
+            <Button variant={'outline-light'} style={{ margin: ' 0px 24px 0px 0px ' }}>
+              История посещений
+            </Button>
+            <Button variant={'outline-light'} style={{ margin: ' 0px 0px 0px 595px ' }}>
+              Выйти
+            </Button>
+          </Nav>
+        ) : (
+          <Nav className="ml-auto" style={{ color: 'white', margin: '0px 224px 0px 0px ' }}>
+            <Button variant={'outline-light'} onClick={() => user.setIsAuth(true)}>
+              Войти
+            </Button>
+          </Nav>
+        )}
       </Container>
     </Navbar>
   );
