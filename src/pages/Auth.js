@@ -62,7 +62,9 @@ const Auth = observer(() => {
                 Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
               </div>
             )}
-            <Button variant={'outline-success'}>{isLogin ? 'Войти' : 'Регистрация'}</Button>
+            <Button variant={'outline-success'} onClick={() => user.setIsAuth(true)}>
+              {isLogin ? 'Войти' : 'Регистрация'}
+            </Button>
           </Row>
         </Form>
       </Card>

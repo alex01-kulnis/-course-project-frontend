@@ -13,7 +13,7 @@ const NavBar = observer(() => {
   const { user } = useContext(Context);
 
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" style={{ height: 50 }}>
       <Container>
         {user.isAuth ? (
           <Nav className="ml-auto">
@@ -35,9 +35,13 @@ const NavBar = observer(() => {
           </Nav>
         ) : (
           <Nav className="ml-auto" style={{ color: 'white', margin: '0px 224px 0px 0px ' }}>
-            <Button variant={'outline-light'} onClick={() => user.setIsAuth(true)}>
+            {
+              <h1>
+                Войдите , чтобы воспользоваться меню
+              </h1> /* <Button variant={'outline-light'} onClick={() => user.setIsAuth(true)}>
               Войти
-            </Button>
+            </Button> */
+            }
           </Nav>
         )}
       </Container>
