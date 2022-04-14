@@ -1,5 +1,5 @@
 import Auth from './pages/Auth';
-import { ConfrmEvent } from './pages/ConfrmEvent';
+import ConfirmEvent from './pages/ConfirmEvent';
 import { CreateEvent } from './pages/CreateEvent';
 import Event from './pages/Event';
 import { HistoryEvent } from './pages/HistoryEvent';
@@ -16,8 +16,8 @@ export const authRoutes = [
   { path: LOGIN_ROUTE, Component: Auth },
   { path: EVENT_ROUTE, Component: Event },
   { path: CREATE_EVENT_ROUTE, Component: CreateEvent },
-  { path: CONFIRM_EVENT_ROUTE, Component: ConfrmEvent },
   { path: HISTORY_EVENT_ROUTE, Component: HistoryEvent },
+  { path: CONFIRM_EVENT_ROUTE, Component: ConfirmEvent },
 ];
 
 export const publicRoutes = [

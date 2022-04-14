@@ -23,14 +23,14 @@ const Auth = observer(() => {
     try {
       let data;
       if (isLogin) {
-        console.log('login');
         data = await login(loginn, password);
       } else {
-        console.log('registration');
         data = await registration(loginn, password, firstname, secondname);
       }
       user.setUser(user);
       user.setIsAuth(true);
+      console.log(data);
+      localStorage.setItem('token', data.token);
       history.push(EVENT_ROUTE);
     } catch (e) {
       alert(e.response.data.message);

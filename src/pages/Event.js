@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { EventItem } from '../components/EventItem';
 import '../styles/styles.css';
+import { Context } from '../index';
 
 const Event = () => {
+  const { user } = useContext(Context);
+
   const [posts, setPosts] = useState([
     {
       id_event: 1,

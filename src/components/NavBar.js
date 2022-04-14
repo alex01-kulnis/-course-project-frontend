@@ -33,7 +33,11 @@ const NavBar = observer(() => {
             <NavLink style={{ color: 'white', margin: ' 0px 24px 0px 0px ' }} to={HISTORY_EVENT_ROUTE}>
               История посещений
             </NavLink>
-            <NavLink style={{ color: 'white', margin: ' 0px 0px 0px 595px ' }} to={LOGIN_ROUTE}>
+            <NavLink
+              style={{ color: 'white', margin: ' 0px 0px 0px 595px ' }}
+              to={LOGIN_ROUTE}
+              onClick={() => user.setIsAuth(true)}
+            >
               Выйти
             </NavLink>
           </Nav>
