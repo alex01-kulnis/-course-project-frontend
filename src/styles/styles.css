@@ -27,6 +27,11 @@
 .post__btns {
   margin: 15px;
 }
+
+.search_string {
+  display: flex;
+  margin-left: 0px;
+}
 /*
 .post-enter {
     transform: translateX(-350px);
