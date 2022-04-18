@@ -29,9 +29,6 @@ const Auth = observer(() => {
       }
       user.setUser(user);
       user.setIsAuth(true);
-      console.log(data);
-      //localStorage.setItem('token', data);
-      console.log(user._isAuth);
       history.push(EVENT_ROUTE);
     } catch (e) {
       alert(e.response.data.message);

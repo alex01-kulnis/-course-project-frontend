@@ -1,7 +1,7 @@
 import { $host, $authHost } from './index';
 
 export const fetchEvents = async () => {
-  const { data } = await $authHost.authHost('/api/event');
+  const { data } = await $authHost.get('/api/events');
   return data;
 };
 

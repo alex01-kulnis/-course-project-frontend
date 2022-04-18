@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-
+import { observer } from 'mobx-react-lite';
+import React from 'react';
+//история не работает бо поменял общщий event-item props.'event'.name_event
 export const EventItem = (props) => {
   return (
     <div className="post_main">
       <div className="post">
         <div className="post__content">
           <div>
-            <strong>Название</strong> :{props.post.name_event}
+            <strong>Название</strong> : {props.post.name_event}
           </div>
           <div>
             <strong>Место</strong> : {props.post.place_event}
