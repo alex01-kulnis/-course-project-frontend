@@ -18,8 +18,8 @@ const Event = observer(() => {
       id_event: 1,
       id_user: 1,
       id_creator: 1,
-      name_event: 'b',
-      place_event: 'f',
+      name_event: 'a',
+      place_event: 'z',
       data_and_time_event: '23-03-2001',
       max_participants_event: 23,
     },
@@ -27,16 +27,16 @@ const Event = observer(() => {
       id_event: 2,
       id_user: 2,
       id_creator: 2,
-      name_event: 'a',
-      place_event: 'z',
+      name_event: 'b',
+      place_event: 'd',
       data_and_time_event: '23-03-2001',
       max_participants_event: 23,
     },
   ]);
 
-  // useEffect(() => {
-  //   const data = fetchEvents().then((data) => event.setEvents(data));
-  // });
+  useEffect(() => {
+    fetchEvents().then((data) => event.setEvents(data));
+  });
 
   const sortedPosts = useMemo(() => {
     if (selectedSort) {

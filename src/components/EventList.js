@@ -15,7 +15,9 @@ const EventList = observer(({ posts }) => {
     <div>
       <TransitionGroup>
         {posts.map((post) => (
-          <EventItem post={post} key={post.id_event} />
+          <CSSTransition key={post.id_event} timeout={500} classNames="post">
+            <EventItem post={post} key={post.id_event} />
+          </CSSTransition>
         ))}
       </TransitionGroup>
     </div>
