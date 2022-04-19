@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const EventItem = ({ post }) => {
+export const HistoryEventItem = ({ post }) => {
   return (
     <div className="post_main">
       <div className="post">
@@ -17,9 +17,6 @@ export const EventItem = ({ post }) => {
           <div>
             <strong>Макс. колв-во участников</strong> : {post.max_participants_event}
           </div>
-        </div>
-        <div className="post__btns">
-          <button>Подать заявку</button>
         </div>
       </div>
     </div>

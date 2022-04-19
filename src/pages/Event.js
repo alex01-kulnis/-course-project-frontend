@@ -6,6 +6,7 @@ import { fetchEvents } from '../http/eventApi';
 import { Form } from 'react-bootstrap';
 import EventList from '../components/EventList';
 import MySelect from '../components/select/MySelect';
+import { $authHost } from '../http/index';
 
 const Event = observer(() => {
   const { event } = useContext(Context);
@@ -14,29 +15,30 @@ const Event = observer(() => {
   const [selectedSort, setSelectedSort] = useState('');
 
   const [posts, setPosts] = useState([
-    {
-      id_event: 1,
-      id_user: 1,
-      id_creator: 1,
-      name_event: 'a',
-      place_event: 'z',
-      data_and_time_event: '23-03-2001',
-      max_participants_event: 23,
-    },
-    {
-      id_event: 2,
-      id_user: 2,
-      id_creator: 2,
-      name_event: 'b',
-      place_event: 'd',
-      data_and_time_event: '23-03-2001',
-      max_participants_event: 23,
-    },
+    // {
+    //   id_event: 1,
+    //   id_user: 1,
+    //   id_creator: 1,
+    //   name_event: 'a',
+    //   place_event: 'z',
+    //   data_and_time_event: '23-03-2001',
+    //   max_participants_event: 23,
+    // },
+    // {
+    //   id_event: 2,
+    //   id_user: 2,
+    //   id_creator: 2,
+    //   name_event: 'b',
+    //   place_event: 'd',
+    //   data_and_time_event: '23-03-2001',
+    //   max_participants_event: 23,
+    // },
   ]);
 
   useEffect(() => {
-    fetchEvents().then((data) => event.setEvents(data));
-  });
+    fetchEvents().then((data) => setPosts(data));
+    event.setEvents(posts);
+  }, []);
 
   const sortedPosts = useMemo(() => {
     if (selectedSort) {
@@ -77,5 +79,5 @@ const Event = observer(() => {
     </div>
   );
 });
-
+//sortedAndSearchedPosts
 export default Event;
