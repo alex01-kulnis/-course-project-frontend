@@ -1,19 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
-
-import { observer } from 'mobx-react-lite';
-import { Context } from '../index';
 import { createEvent } from '../http/eventApi';
-import jwtDecode from 'jwt-decode';
 
 export const CreateEvent = () => {
-  const { user } = useContext(Context);
-
   const [nameEvent, setNameEvent] = useState('');
   const [placeEvent, setPlaceEvent] = useState('');
   const [data, setData] = useState('');
@@ -63,7 +54,6 @@ export const CreateEvent = () => {
             onChange={(e) => setMaxParticipants(e.target.value)}
             value={maxParticipants}
           />
-
           <Button style={{ margin: '20px 0px 0px 0px' }} variant={'outline-success'} onClick={click}>
             Создать
           </Button>

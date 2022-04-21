@@ -1,9 +1,9 @@
 import React from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { ConfirmEventItem } from './ConfirmEventItem';
 import { observer } from 'mobx-react-lite';
-import { HistoryEventItem } from './HistoryEventItem';
 
-const HistoryEventList = observer(({ posts }) => {
+const ConfirmEventList = observer(({ posts }) => {
   if (!posts.length) {
     return <h1 style={{ textAlign: 'center' }}>Events не найдены!</h1>;
   }
@@ -13,7 +13,7 @@ const HistoryEventList = observer(({ posts }) => {
       <TransitionGroup>
         {posts.map((post) => (
           <CSSTransition key={post.id} timeout={500} classNames="post">
-            <HistoryEventItem post={post} key={post.id} />
+            <ConfirmEventItem post={post} key={post.id} />
           </CSSTransition>
         ))}
       </TransitionGroup>
@@ -21,4 +21,4 @@ const HistoryEventList = observer(({ posts }) => {
   );
 });
 
-export default HistoryEventList;
+export default ConfirmEventList;
