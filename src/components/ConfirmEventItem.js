@@ -22,7 +22,16 @@ export const ConfirmEventItem = ({ post }) => {
 
   const remove = async () => {
     try {
-      const result = await refuseEvent(post.id);
+      const result = await refuseEvent(
+        post.id,
+        post.id_event,
+        post.id_creator,
+        post.id_user,
+        post.name_event,
+        post.place_event,
+        post.data_and_time_event,
+        post.max_participants_event
+      );
       alert(result);
     } catch (e) {
       alert(e.response.data.message);

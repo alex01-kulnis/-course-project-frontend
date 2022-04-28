@@ -12,7 +12,7 @@ export const EventItem = ({ post }) => {
         post.data_and_time_event,
         post.max_participants_event,
         post.surname
-      );
+      ); 
       alert(result);
     } catch (e) {
       alert(e.response.data.message);

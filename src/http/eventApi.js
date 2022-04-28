@@ -69,8 +69,25 @@ export const fetchApllyConfirmEvent = async (
   return data;
 };
 
-export const refuseEvent = async (id) => {
-  console.log(id);
-  const { data } = await $authHost.patch('/api/confirm-visiting-events', { id });
+export const refuseEvent = async (
+  id,
+  id_event,
+  id_creator,
+  id_user,
+  name_event,
+  place_event,
+  data_and_time_event,
+  max_participants_event
+) => {
+  const { data } = await $authHost.patch('/api/confirm-visiting-events', {
+    id,
+    id_event,
+    id_creator,
+    id_user,
+    name_event,
+    place_event,
+    data_and_time_event,
+    max_participants_event,
+  });
   return data;
 };
